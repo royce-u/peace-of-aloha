@@ -1,11 +1,19 @@
 const express = require("express");
 const cors = require("cors");
+const mysql = require("mysql2");
 
 const app = express()
 
 var corsOptions = {
-    origin: "http://localhost:8081"
+    origin: "http://localhost:3000"
 };
+
+const db = mysql.createConnection({
+    user: "iamgroot",
+    host: "localhost",
+    password: "password",
+    database: "peaceofaloha"
+});
 
 app.use(cors(corsOptions));
 
